@@ -1,0 +1,33 @@
+Type: Application
+Name: fc-chatyuan
+Provider:
+  - 阿里云
+Version: dev
+Description: 使用serverless devs将fc-chatyuan部署到阿里云函数计算上
+HomePage: 项目首页地址
+Tags: #标签详情
+  - 部署函数
+Category: Web框架
+Parameters:
+  type: object
+  additionalProperties: false # 不允许增加其他属性
+  required: # 必填项
+    - region
+    - imageUrl
+    - instanceType
+  properties:
+    region:
+      title: 地域
+      type: string
+      default:
+      description: 创建应用所在的地区
+      enum:
+        - cn-beijing
+        - cn-hangzhou
+        - cn-shanghai
+        - cn-shenzhen
+    imageUrl:
+      title: fc-chatyuan 镜像地址
+      type: string
+      default: ""
+      description: "fc-chatyuan 的镜像地址，您可以参考或者使用社区贡献者提供的相关镜像如 registry.cn-hangzhou.aliyuncs.com/fc-demo2/ohyee-test:fc-chatyuan-v1"
